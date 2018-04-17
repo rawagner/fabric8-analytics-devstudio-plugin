@@ -97,8 +97,15 @@ public class WorkspaceFilesFinder {
 				return;
 			}
 		}
-
-		IContainer container = (IContainer) adaptable.getAdapter(IContainer.class);
+		
+		IProject project = (IProject) adaptable.getAdapter(IProject.class);
+		
+		IContainer container = null;
+		if(project != null) {
+			container = (IContainer) project.getAdapter(IContainer.class);
+		} else {
+			container = (IContainer) adaptable.getAdapter(IContainer.class);
+		}
 		if (container == null || !container.isAccessible()) {
 			return;
 		}
@@ -179,7 +186,14 @@ public class WorkspaceFilesFinder {
 	 */
 	private IFile findLicense(IAdaptable adaptable) throws CoreException {
 		
-		IContainer container = (IContainer) adaptable.getAdapter(IContainer.class);
+		IProject project = (IProject) adaptable.getAdapter(IProject.class);
+		
+		IContainer container = null;
+		if(project != null) {
+			container = (IContainer) project.getAdapter(IContainer.class);
+		} else {
+			container = (IContainer) adaptable.getAdapter(IContainer.class);
+		}
 		if (container == null || !container.isAccessible()) {
 			return null;
 		}
