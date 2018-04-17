@@ -16,6 +16,7 @@
       <view
             class="com.redhat.fabric8analytics.eclipse.ui.internal.view.StackAnalysesView"
             id="com.redhat.fabric8analytics.eclipse.ui.StackAnalysesView"
+           	icon="icons/osio-16x16.png"
             name="Stack Analyses">
       </view>
    </extension>
@@ -43,6 +44,7 @@
          <command
                commandId="com.redhat.fabric8analytics.eclipse.ui.StackAnalysisHandler"
                label="Stack Analysis"
+               icon="icons/osio-16x16.png"
                mnemonic="M1+P">
          </command>
          <visibleWhen>
@@ -83,6 +85,7 @@
          <command
                commandId="com.redhat.fabric8analytics.eclipse.ui.StackAnalysisHandler"
                label="Stack Analysis"
+               icon="icons/osio-16x16.png"
                mnemonic="M1+P">
          </command>
            <visibleWhen>
